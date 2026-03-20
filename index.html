@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login / Register</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="logo-wrap">
+        <!-- Inline SVG logo -->
+        <svg class="logo" width="160" height="40" viewBox="0 0 400 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Study Buddy">
+            <defs>
+                <linearGradient id="g1" x1="0" x2="1">
+                    <stop offset="0%" stop-color="#1e88ff" />
+                    <stop offset="100%" stop-color="#0d6efd" />
+                </linearGradient>
+            </defs>
+            <g fill="none" fill-rule="evenodd">
+                <rect rx="8" width="400" height="100" fill="transparent" />
+                <g transform="translate(12,18)">
+                    <circle cx="20" cy="20" r="18" fill="url(#g1)" />
+                    <path d="M12 22c3-4 8-6 12-6s9 2 12 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <text x="56" y="30" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700" fill="#042743">Study Buddy</text>
+                </g>
+            </g>
+        </svg>
+    </div>
+</header>
+
+<div class="container">
+    <div class="box login-box">
+        <h2>Login</h2>
+        <input id="loginUsername" type="text" placeholder="Username">
+        <input id="loginPassword" type="password" placeholder="Password">
+        <label>Subject (optional):
+            <select id="loginSubject">
+                <option value="">(choose your subject)</option>
+                <option value="DBMS">DBMS</option>
+                <option value="Operating System">Operating System</option>
+                <option value="Computer Networking">Computer Networking</option>
+                <option value="Mathematics">Mathematics</option>
+                <option value="English">English</option>
+                <option value="Science">Science</option>
+            </select>
+        </label>
+        <button id="doLogin" type="button">Login</button>
+        <p>New here?</p>
+        <button class="switch register-btn" type="button">Go to Register</button>
+    </div>
+
+    <div class="box register-box">
+        <h2>Register</h2>
+        <input id="regUsername" type="text" placeholder="Username">
+        <input id="regEmail" type="email" placeholder="Email">
+        <input id="regPassword" type="password" placeholder="Password">
+        <label>Subject:
+            <select id="regSubject">
+                <option value="">Select subject</option>
+                <option value="DBMS">DBMS</option>
+                <option value="Operating System">Operating System</option>
+                <option value="Computer Networking">Computer Networking</option>
+                <option value="Mathematics">Mathematics</option>
+                <option value="English">English</option>
+                <option value="Science">Science</option>
+            </select>
+        </label>
+        <button id="doRegister" type="button">Register</button>
+        <p>Already have an account?</p>
+        <button class="switch login-btn" type="button">Go to Login</button>
+    </div>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>
+              

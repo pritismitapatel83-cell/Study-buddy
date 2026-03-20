@@ -1,0 +1,158 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, #f4f7fb 0%, #e9f0fb 100%);
+    font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    color: #0b2545;
+}
+
+/* Header logo */
+.site-header{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    height:52px;
+    padding:8px 0;
+    background: #ffffffdd;
+    box-shadow: 0 6px 18px rgba(11,37,69,0.04);
+    z-index:1000;
+}
+.logo-wrap{ display:inline-flex; align-items:center }
+.logo{ display:block }
+.logo text{ letter-spacing: -0.4px }
+
+/* keep the main container centered while leaving room for the fixed header */
+.site-header .logo{ height:36px }
+body { padding-top: 52px; }
+.container{ margin: 0 }
+
+.container {
+    width: 460px;
+    max-width: calc(100% - 40px);
+    height: 560px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+    box-shadow: 0 18px 40px rgba(11,37,69,0.12);
+    background: white;
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 40px 42px;
+    box-sizing: border-box;
+    transition: transform 0.45s cubic-bezier(.2,.9,.3,1);
+    background: linear-gradient(180deg, #a9c0fa 0%, #edf3f9 100%);
+    color: #042743;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.box h2 {
+    margin: 0 0 18px 0;
+    font-size: 28px;
+    letter-spacing: -0.2px;
+    font-weight: 600;
+    color: #042743;
+}
+
+.box label {
+    display: block;
+    font-size: 13px;
+    margin: 10px 0 6px 0;
+    opacity: 0.95;
+}
+
+.box input,
+.box select {
+    width: 100%;
+    padding: 12px 12px;
+    margin: 6px 0 12px 0;
+    border: 1px solid rgba(255,255,255,0.18);
+    background: rgba(255,255,255,0.95);
+    color: #0b2545;
+    border-radius: 8px;
+    box-shadow: inset 0 1px 2px rgba(11,37,69,0.04);
+    font-size: 14px;
+}
+
+.box input::placeholder { color: rgba(11,37,69,0.45); }
+
+.box button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 14px;
+    font-weight: 600;
+    font-size: 15px;
+    box-shadow: 0 8px 18px rgba(11,37,69,0.12);
+}
+
+.box .primary {
+    background: linear-gradient(180deg,#1e88ff 0%, #0d6efd 100%);
+    color: white;
+}
+
+.box .ghost {
+    background: rgba(4,39,67,0.06);
+    color: #042743;
+}
+
+.switch {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
+
+/* Ensure the main action buttons are styled as primary */
+#doLogin, #doRegister {
+    background: linear-gradient(180deg,#055abb 0%, #0770e8 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+}
+
+/* Style the switch buttons (Go to Register / Go to Login) as blue primary actions */
+.switch.register-btn, .switch.login-btn {
+    display: inline-block;
+    background: linear-gradient(180deg,#055abb 0%, #0871e9 100%);
+    color: #ffffff;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 12px;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(11,37,69,0.08);
+}
+
+.switch.register-btn:hover, .switch.login-btn:hover {
+    transform: translateY(-1px);
+}
+
+.register-box {
+    transform: translateX(100%);
+}
+
+.container.active .login-box { transform: translateX(-100%); }
+.container.active .register-box { transform: translateX(0); }
+
+/* small screens */
+@media (max-width:480px){
+    .container{ width: 360px; height: 640px }
+    .box{ padding: 28px }
+    .box h2{ font-size: 24px }
+}
