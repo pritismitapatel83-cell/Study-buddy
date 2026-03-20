@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Planner | Study Buddy</title>
+    <link rel="stylesheet" href="planner.css">
+</head>
+<body>
+
+<header class="header">
+    <h2>📅 Study Planner</h2>
+    <button type="button" class="back-btn" onclick="location.href='dashboard.html'">⬅ Back to Dashboard</button>
+</header>
+
+<main class="container">
+
+    <!-- ADD TASK -->
+    <section class="add-task">
+        <h3>Add Study Task</h3>
+        <input type="text" id="task" placeholder="Enter task (e.g. DBMS Revision)">
+        <input type="date" id="date">
+        <button onclick="addTask()">Add Task</button>
+    </section>
+
+    <!-- TASK LIST -->
+    <section class="task-list">
+        <h3>Upcoming Tasks</h3>
+        <ul id="taskList">
+            <li>
+                <span>📘 DBMS Assignment</span>
+                <small>2026-02-10</small>
+            </li>
+        </ul>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <p>© 2026 Study Buddy</p>
+</footer>
+
+<script src="planner.js"></script>
+</body>
+</html>

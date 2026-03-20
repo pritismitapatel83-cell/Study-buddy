@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6ff;
+}
+
+.header {
+    background: #4f6df5;
+    color: white;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Back button style (matches profile.back-btn) */
+.back-btn {
+    display: inline-block;
+    background: #2563eb;
+    color: #ffffff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+.back-btn:hover {
+    background: #1e40af;
+}
+
+.container {
+    padding: 30px;
+}
+
+.add-task,
+.task-list {
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.add-task input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.add-task button {
+    background: #4f6df5;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.task-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.task-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    background: #eef1ff;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+
+.footer {
+    text-align: center;
+    padding: 12px;
+    background: #4f6df5;
+    color: white;
+} 
+body {
+    animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

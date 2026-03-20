@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Notes | Study Buddy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="notes.css">
+</head>
+<body>
+
+<!-- HEADER WITH LOGO -->
+<header class="header">
+    <div class="logo-box">
+        <img src="images/logo.png" alt="Study Buddy Logo">
+        <h2>Study Buddy</h2>
+    </div>
+
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+    <nav id="navMenu">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="notes.html" class="active">Notes</a>
+        <a href="planner.html">Planner</a>
+        <a href="student-connect.html">Connect</a>
+        <a href="profile.html">Profile</a>
+    </nav>
+</header>
+
+<!-- MAIN CONTENT -->
+<main class="container">
+
+    <!-- UPLOAD NOTES -->
+    <section class="upload-box">
+        <h3>📤 Upload Notes</h3>
+
+        <input type="text" id="subject" placeholder="Subject Name">
+        <input type="file" id="file">
+        <label style="display:block;margin-top:8px;"><input type="checkbox" id="publicNote"> Public (visible to all)</label>
+        <div style="display:flex;gap:10px;align-items:center;margin-top:10px;">
+            <button onclick="uploadNote()">Upload</button>
+            <progress id="uploadProgress" value="0" max="100" style="width:180px;display:none;"></progress>
+        </div>
+    </section>
+
+    <!-- NOTES LIST -->
+    <section class="notes-list">
+        <h3>📚 My Notes</h3>
+
+            <div class="controls">
+                <input id="searchInput" placeholder="Search by filename or subject" style="flex:1;padding:8px;border:1px solid #ccc;border-radius:6px;">
+                <label style="font-size:14px;"><input type="checkbox" id="adminOnly"> Show admin uploads only</label>
+            </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Subject</th>
+                    <th>File Name</th>
+                    <th>Uploader</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="notesTable">
+                <tr>
+                    <td>software engineering</td>
+                    <td>Unit-1.pdf</td>
+                    <td><button>Download</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Note details modal -->
+    <div id="noteModal" style="display:none;position:fixed;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.4);align-items:center;justify-content:center;">
+        <div style="background:#fff;padding:20px;border-radius:8px;width:90%;max-width:600px;position:relative;">
+            <button id="closeModal" style="position:absolute;right:12px;top:12px;">Close</button>
+            <h3 id="modalTitle">Note details</h3>
+            <p><strong>Uploader:</strong> <span id="modalUploader"></span></p>
+            <p><strong>Subject:</strong> <input id="modalSubject" type="text"></p>
+            <p><strong>File:</strong> <span id="modalFileName"></span></p>
+            <p><strong>Date:</strong> <span id="modalDate"></span></p>
+            <p><label><input type="checkbox" id="modalPublic"> Public</label></p>
+            <p>
+                <a id="modalDownload" href="#" download>Download</a>
+                <button id="saveNoteBtn">Save</button>
+                <button id="deleteNoteBtn" style="background:#ff4d4d;margin-left:8px;">Delete</button>
+            </p>
+        </div>
+    </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>© 2026 Study Buddy | your learning companion 😊</p>
+</footer>
+
+<!-- JS -->
+<script src="notes.js"></script>
+
+</body>
+</html>
