@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>StudyBuddy</title>
+    <link rel="stylesheet" href="connection.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h2>StudyBuddy</h2>
+        <ul>
+            <li onclick="showSection('connect')" class="active">🔗 Connect</li>
+            <li onclick="showSection('chat')">💬 Chat</li>
+            <li onclick="showSection('group')">👥 Groups</li>
+        </ul>
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+
+        <!-- CONNECT -->
+        <div id="connect" class="section">
+            <div class="card">
+                <h2>Find Study Partners</h2>
+
+                <select id="subject">
+                    <option value="">SELECT SUBJECT</option>
+                    <option value="DBMS">DBMS</option>
+                    <option value="Operating system">OS</option>
+                    <option value="Computer networking">CN</option>
+                    <option value="mathematics">mathematics</option>
+                    <option value="English">English</option>
+                    <option value="Science">science</option>
+                </select>
+
+                <button onclick="findMatches()">Find Matches</button>
+
+                <button type="button" class="open-studentconnect" onclick="location.href='studentconnect.html'">Open Student Connect</button>
+
+                <div id="matches"></div>
+            </div>
+
+            <div class="card">
+                <h3>Subject Groups</h3>
+                <div id="subjectGroups"></div>
+                <div id="subjectGroupMembers" style="margin-top:12px;"></div>
+            </div>
+
+            <div class="card">
+                <h3>Requests</h3>
+                <div id="requests"></div>
+            </div>
+        </div>
+
+        <!-- CHAT -->
+        <div id="chat" class="section hidden">
+            <div class="chat-container">
+
+                <div class="users" id="userList"></div>
+
+                <div class="chat-box">
+                    <div class="chat-header" id="chatHeader">Select User</div>
+
+                    <div id="chatMessages"></div>
+
+                    <div class="chat-input">
+                        <input type="text" id="message" placeholder="Type message...">
+                        <button onclick="sendMessage()">➤</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- GROUP -->
+        <div id="group" class="section hidden">
+            <div class="card">
+                <h2>Study Groups</h2>
+
+                <input type="text" id="groupName" placeholder="Enter group name">
+                <button onclick="createGroup()">Create Group</button>
+
+                <div id="groupList"></div>
+            </div>
+
+            <div class="card">
+                <h3 id="groupTitle"></h3>
+                <button id="leaveGroupBtn" style="display:none; margin-left:8px;" onclick="leaveGroup()">Leave Group</button>
+                <div id="groupMessages"></div>
+
+                <input type="text" id="groupMsg" placeholder="Message...">
+                <button onclick="sendGroupMessage()">Send</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="connection.js"></script>
+</body>
+</html>
