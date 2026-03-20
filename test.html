@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Study Buddy | Tests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+
+<header class="header">
+    <h2>🧪 Study Buddy – Tests</h2>
+    <a href="dashboard.html" class="back-btn">← Dashboard</a>
+</header>
+
+<main class="container">
+
+    <!-- Admin toggle -->
+    <label style="display:block;margin:16px 0;"><input type="checkbox" id="adminToggle"> Admin mode (create tests)</label>
+
+    <!-- Add Test (admin) -->
+    <section class="add-test" id="adminArea" style="display:none;">
+        <h3>Create New Test</h3>
+
+        <input type="text" id="title" placeholder="Test title">
+        <input type="date" id="date">
+        <input type="time" id="time">
+
+        <h4>Questions</h4>
+        <div id="questionsContainer"></div>
+        <button id="addQuestionBtn">Add Question</button>
+        <button id="saveTestBtn">Save Test</button>
+    </section>
+
+    <!-- Test List (for users) -->
+    <section class="test-list">
+        <h3>Available Tests</h3>
+        <ul id="testItems">
+            <!-- tests will appear here -->
+        </ul>
+    </section>
+
+    <!-- Test taking area -->
+    <section class="take-test" id="takeTestArea" style="display:none; margin-top:20px;">
+        <h3 id="takingTitle">Take Test</h3>
+        <label>Your name: <input type="text" id="userName" placeholder="Your name"></label>
+        <div id="testArea"></div>
+    </section>
+</main>
+<!-- Summary modal -->
+<div id="summaryModal" class="summary-modal" style="display:none;">
+    <div class="summary-content">
+        <button class="summary-close" id="summaryClose">×</button>
+        <h3 id="summaryTitle">Test Summary</h3>
+        <div id="summaryBody"></div>
+        <div class="summary-actions">
+            <button id="summaryDashboard">Go to Dashboard</button>
+        </div>
+    </div>
+</div>
+<!-- Notification -->
+<div id="notification" class="notification">
+    Test added successfully ✔
+</div>
+<script src="test.js"></script>
+</body>
+</html>
