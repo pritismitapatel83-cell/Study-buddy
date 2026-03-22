@@ -143,8 +143,8 @@ CREATE TABLE leaderboard (
 ) ENGINE=InnoDB;
 INSERT INTO users (full_name, email, course, semester, total_points)
 VALUES 
-('Amit Kumar', 'amit@example.com', 'BCA', 'Semester IV', 420),
-('Sneha Patel', 'sneha@example.com', 'BCA', 'Semester IV', 395),
-('Rahul Das', 'rahul@example.com', 'BCA', 'Semester IV', 370),
+('Rahul', 'rahul@example.com', 'BCA', 'Semester IV', 420),
+('Anita', 'anita@example.com', 'BCA', 'Semester IV', 395),
+('Amit', 'amit@example.com', 'BCA', 'Semester IV', 370),
 ('Anjali Sharma', 'anjali@example.com', 'BCA', 'Semester II', 310),
 ('Vikram Singh', 'vikram@example.com', 'BCA', 'Semester VI', 280);
